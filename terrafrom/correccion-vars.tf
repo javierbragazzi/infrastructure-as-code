@@ -39,7 +39,7 @@ variable "vm_worker_size" {
 variable "vm_nfs_size" {
   type        = string
   description = "Tamaño de la máquina virtual para el nodo nfs"
-  default     = "Standard_DS1_v2" # 1 CPU Core, 3.5GB Memory
+  default     = "Standard_F2" # 2 CPU Core, 4GB Memory
 }
 
 variable "vm_worker_names" {
