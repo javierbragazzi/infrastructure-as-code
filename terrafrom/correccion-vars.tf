@@ -27,25 +27,25 @@ variable "tags_all_resources" {
 variable "vm_master_size" {
   type        = string
   description = "Tamaño de la máquina virtual para el nodo master"
-  default     = "Standard_F2" # 2 CPU Cores, 4GB Memory, SSD 32GB, Max Network Bandwidth high
+  default     = "Standard_D2_v3" # 2 CPU Cores, 8GB Memory
 }
 
 variable "vm_worker_size" {
   type        = string
   description = "Tamaño de la máquina virtual para los nodos workers"
-  default     = "Standard_F2" # 2 CPU Cores, 4GB Memory, SSD 32GB, Max Network Bandwidth high
+  default     = "Standard_F2" # 2 CPU Core, 4GB Memory
 }
 
 variable "vm_nfs_size" {
   type        = string
   description = "Tamaño de la máquina virtual para el nodo nfs"
-  default     = "Standard_F2" # 2 CPU Cores, 4GB Memory, SSD 32GB, Max Network Bandwidth high
+  default     = "Standard_DS1_v2" # 1 CPU Core, 3.5GB Memory
 }
 
 variable "vm_worker_names" {
   type        = list(string)
   description = "Nombres y cantidad de workers de Kubernetes"
-  default     = ["worker-node-1", "worker-node-2"]
+  default     = ["worker-node-1"]
 }
 
 variable "network_name" {

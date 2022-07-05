@@ -9,9 +9,13 @@ terraform {
   required_version = ">= 1.1.0"
 }
 
+provider "azurerm" {
+  features {}
+}
+
 # Resource Group
 resource "azurerm_resource_group" "rg" {
-  name     = "kubernetes-rg"
+  name     = "cp2-rg"
   location = var.location
 
   tags = var.tags_all_resources

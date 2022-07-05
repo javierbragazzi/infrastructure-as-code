@@ -31,7 +31,7 @@ resource "azurerm_linux_virtual_machine" "master" {
     publisher = "cognosys"
     offer     = "centos-8-stream-free"
     sku       = "centos-8-stream-free"
-    version   = "latest"
+    version   = "22.03.28"
   }
 
   tags = var.tags_all_resources
@@ -68,7 +68,7 @@ resource "azurerm_linux_virtual_machine" "workers" {
     publisher = "cognosys"
     offer     = "centos-8-stream-free"
     sku       = "centos-8-stream-free"
-    version   = "latest"
+    version   = "22.03.28"
   }
 
   tags = var.tags_all_resources
@@ -104,7 +104,7 @@ resource "azurerm_linux_virtual_machine" "nfs" {
     publisher = "cognosys"
     offer     = "centos-8-stream-free"
     sku       = "centos-8-stream-free"
-    version   = "latest"
+    version   = "22.03.28"
   }
 
   tags = var.tags_all_resources
