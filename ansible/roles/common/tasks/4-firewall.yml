@@ -1,0 +1,32 @@
+---
+  - name: Install firewall
+    dnf:
+      name: firewalld
+      state: latest
+    tags: common
+
+  - name: Enable firewall
+    systemd:
+      name: firewalld
+      state: started
+      enabled: yes
+
+  - name: br_netfilter module
+    modprobe:
+      name: br_netfilter
+
+  - name: Enable firewall masquerade
+    firewalld:
+      masquerade: yes
+      permanent: yes
+      state: enabled
+    notify: reload firewall
+
+  - name: Network configuration
+    sysctl:
+      name: "{{ item }}"
+      value: 1
+    with_items:
+      - net.bridge.bridge-nf-call-ip6tables
+      - net.bridge.bridge-nf-call-iptables
+      - net.ipv4.ip_forward

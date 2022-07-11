@@ -1,12 +1,11 @@
 [all:vars]
-ansible_user=<USUARIO>
+ansible_user=adminUserVm
 
 [master]
-master
+master domain_name=master.jb.com private_ip=10.0.0.3 public_ip=0.0.0.0
 
 [workers]
-worker1
-worker2
+worker-1 domain_name=worker.jb.com private_ip=10.0.0.4 public_ip=0.0.0.0
 
 [nfs]
-nfs
+nfs domain_name=nfs.jb.com private_ip=10.0.0.2 public_ip=0.0.0.0
