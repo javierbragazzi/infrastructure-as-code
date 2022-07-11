@@ -1,0 +1,33 @@
+---
+  - name: Allow the necessary traffic for the service on the firewall
+    firewalld:
+      port: "{{ item }}"
+      permanent: yes
+      state: enabled
+      with_items:
+        - 6443/tcp  # Kubernetes API server
+        - 2379/tcp  # etcd server client API
+        - 2380/tcp  # etcd server client API
+        - 10250/tcp # Kubelet API
+        - 10251/tcp # kube-scheduler
+        - 10252/tcp # kube-controller-manager
+        - 10255/tcp # Statistics
+
+  - name: Reload service firewalld
+    systemd:
+      name: firewalld
+      state: reloaded
+  
+  - name: Allow connections from each worker node on the firewall
+    firewalld:
+      permanent: yes
+      rich_rule: rule family=ipv4 source address="{{ item }}:{{ hostvars[item].public_ip }}"/32 port=6443 protocol=tcp accept
+      state: enabled
+      immediate: yes
+      with_items: 
+        - "{{ groups['workers'] }}"
+  
+  - name: Reload service firewalld
+    systemd:
+      name: firewalld
+      state: reloaded
