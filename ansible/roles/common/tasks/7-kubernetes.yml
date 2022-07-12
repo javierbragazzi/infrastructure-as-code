@@ -1,7 +1,7 @@
 - name: Add Kubernetes repository
   yum_repository:
     name: kubernetes
-    description: Kubernetes YUM repo
+    description: Kubernetes yum repository
     baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
     enabled: yes
     gpgcheck: yes

@@ -7,7 +7,7 @@
 
   - name: Set private ip
     set_fact:
-      ip_interna: "{{ ansible_facts['default_ipv4']['address'] }}"
+      private_ip: "{{ ansible_facts['default_ipv4']['address'] }}"
     tags: common
 
   - name: Generate /etc/hosts file

@@ -1,2 +1,5 @@
 ---
-# tasks file for master
+  - import_tasks: 0-firewall.yml
+  - import_tasks: 1-kubeadm.yml
+  - import_tasks: 2-sdn.yml
+  - import_tasks: 3-ingress-controller.yml

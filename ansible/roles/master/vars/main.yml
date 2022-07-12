@@ -1,2 +1,2 @@
 ---
-# vars file for master
+pod_network_cidr: 192.169.0.0/16

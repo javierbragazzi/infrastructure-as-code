@@ -1,0 +1,16 @@
+---
+- name: Enable incoming traffic on the firewall
+  firewalld:
+    port: "{{ item }}"
+    permanent: yes
+    state: enabled
+    immediate: yes
+  with_items:
+    - 8285-8472/udp
+    - 10250/tcp
+    - 30000-32767/tcp
+  
+- name: Reload service firewalld
+  systemd:
+    name: firewalld
+    state: reloaded
