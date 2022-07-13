@@ -20,7 +20,11 @@
       masquerade: yes
       permanent: yes
       state: enabled
-    notify: reload firewall
+
+  - name: Reload service firewalld
+    systemd:
+      name: firewalld
+      state: reloaded
 
   - name: Network configuration
     sysctl:

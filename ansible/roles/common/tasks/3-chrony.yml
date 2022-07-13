@@ -6,6 +6,6 @@
   
   - name: Check execution of Chrony
     systemd: 
-      name: chrony
+      name: chronyd
       state: started
       enabled: yes

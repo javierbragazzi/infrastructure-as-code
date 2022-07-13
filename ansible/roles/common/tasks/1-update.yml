@@ -3,4 +3,6 @@
     dnf: 
       name: "*" 
       state: latest
-    notify: reboot
+    
+  - name: Reboot node 
+    reboot:
