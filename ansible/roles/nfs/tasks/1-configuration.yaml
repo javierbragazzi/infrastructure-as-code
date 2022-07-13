@@ -1,0 +1,17 @@
+---
+  - name: Add to the /etc/exports file all the directories to share
+    template:
+      src: exports.j2
+      dest: /etc/exports
+
+  - name: Enable NFS service
+    service:
+      name: nfs-server
+      state: started
+      enabled: yes
+  
+  - name: Export the file system
+    command: exportfs -arv
+
+  - name: Verify that the directory is being exported correctly
+    command: exportfs -s

@@ -1,0 +1,16 @@
+---
+  - name: Enable the traffic corresponding to the NFS service on the firewall
+    firewalld:
+      zone: public 
+      service: "{{ item }}"
+      permanent: yes
+      state: enabled
+    loop: 
+      - "nfs"
+      - "rpc-bind"
+      - "mountd"
+  
+  - name: Reload service firewalld
+    systemd:
+      name: firewalld
+      state: reloaded 
