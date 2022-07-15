@@ -3,7 +3,6 @@
     dnf:
       name: firewalld
       state: latest
-    tags: common
 
   - name: Enable firewall
     systemd:

@@ -3,18 +3,19 @@
     command: kubeadm config images pull
 
   - name: Ininitalization kubeadm
-    command: kubeadm int --pod-network-cidr={{pod_network_cidr}}
-    register: otuput-kubeadm
+    command: kubeadm init --pod-network-cidr=10.0.0.0/16
 
   - name: Generate join command
     command: kubeadm token create --print-join-command
     register: join_command
 
   - name: Copy join command to local file
-    local_action: copy content="{{ join_command.stdout_lines[0] }}" dest="./join-command"
-
-  - name: Export the configuration of kubeadin
-    command: export KUBECONFIG=/etc/kubernetes/admin.conf
+    delegate_to: localhost
+    copy:
+      content: "{{ join_command.stdout_lines[0] }}"
+      dest: "./join-command"
+      mode: 0755
+    become: false
 
   - name: Create directory .kube
     file: 
@@ -27,6 +28,7 @@
   - name: Copy admin.conf 
     copy:
       remote_src: yes
+      src: /etc/kubernetes/admin.conf 
       dest: /home/{{ ansible_user }}/.kube/config
       owner: "{{ ansible_user }}"
       group: "{{ ansible_user }}"
