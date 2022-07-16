@@ -1,0 +1,5 @@
+---
+  - name: Delete the temp directory with the files
+    shell: |
+      rm -rf {{ temp_path }}
+    become: true

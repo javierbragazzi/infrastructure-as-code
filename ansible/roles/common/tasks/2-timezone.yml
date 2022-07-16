@@ -1,0 +1,7 @@
+---
+  - name: Set timezone to Europe/Madrid
+    timezone:
+      name: Europe/Madrid
+
+  - name: Reboot node 
+    reboot:

@@ -1,0 +1,4 @@
+---
+  - import_tasks: 0-setup.yml
+  - import_tasks: 1-configuration.yml
+  - import_tasks: 2-firewall.yml

@@ -1,0 +1,16 @@
+---
+  - name: Install nfs utils
+    dnf:
+      name: nfs-utils
+      state: present
+
+  - name: Create shared directories
+    file: 
+      path: /mnt/shared
+      state: directory
+
+  - name: Set directory owner settings and permissions
+    file:
+      path: /mnt/shared
+      owner: nobody
+      mode: "777"

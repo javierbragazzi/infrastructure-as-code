@@ -1,0 +1,11 @@
+---
+  - name: Install Chrony and enable it
+    dnf:
+      name: chrony
+      state: latest
+  
+  - name: Check execution of Chrony
+    systemd: 
+      name: chronyd
+      state: started
+      enabled: yes
