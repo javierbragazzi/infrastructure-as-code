@@ -1,0 +1,28 @@
+---
+  - name: Create temp directory 
+    file:
+      path: "{{ temp_path }}"
+      state: directory
+
+  - name: Get the files needed for deployment
+    copy:
+      src: ../files/{{ item }}.yaml
+      dest: "{{ temp_path }}"
+    with_items:
+      - mongodb-deployment
+      - mongodb-pv
+      - mongodb-pvc
+      - mongodb-service
+      - pacman-deployment
+      - pacman-service
+
+  - name: Change the IP of mongodb-pv
+    shell: |
+      sed -i "19s/.*/    server: {{ hostvars[item].private_ip }}/" {{ temp_path }}/mongodb-pv.yaml
+    with_items: 
+        - "{{ groups['nfs'] }}"
+  
+  - name: Create the namespace 
+    shell: kubectl create namespace app-pacman
+    become: false
+    

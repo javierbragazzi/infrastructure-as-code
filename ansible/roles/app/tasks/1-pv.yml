@@ -1,0 +1,4 @@
+---
+  - name: Create persistent volume for our MongoDB to persist the database
+    shell: kubectl create -f {{ temp_path }}/mongodb-pv.yaml
+    become: false

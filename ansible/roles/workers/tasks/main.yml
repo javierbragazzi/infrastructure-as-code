@@ -1,3 +1,4 @@
 ---
   - import_tasks: 0-firewall.yml
   - import_tasks: 1-join.yml
+  - import_tasks: 2-nfs.yml

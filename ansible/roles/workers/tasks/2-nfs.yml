@@ -1,0 +1,7 @@
+---
+  - name: Install the necessary packages to access NFS 
+    dnf:
+      name: "{{ item }}"
+    loop: 
+      - "nfs-utils"
+      - "nfs4-acl-tools"      
