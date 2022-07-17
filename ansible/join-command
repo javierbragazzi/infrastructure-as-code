@@ -1,1 +1,0 @@
-kubeadm join 10.0.2.6:6443 --token qdwsg8.wkhcvslvju7oofh6 --discovery-token-ca-cert-hash sha256:016e8838fe850d0e40cd57f63ab466c6f27c6d09e95e8e1758ab7c3cb4a86f06 

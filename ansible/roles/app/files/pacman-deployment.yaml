@@ -20,4 +20,4 @@ spec:
         name: pacman
         ports:
         - containerPort: 8080
-          name: http-server
+          protocol: "TCP"

@@ -9,6 +9,8 @@
     - 8285-8472/udp
     - 10250/tcp
     - 30000-32767/tcp
+    - 30107/tcp
+    - 32593/tcp
   
 - name: Reload service firewalld
   systemd:

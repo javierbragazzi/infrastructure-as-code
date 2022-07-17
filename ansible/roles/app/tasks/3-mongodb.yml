@@ -8,8 +8,3 @@
     shell: | 
       kubectl create -f {{ temp_path }}/mongodb-deployment.yaml
     become: false
-
-  # - name: Scale the deployment
-  #   shell: | 
-  #    kubectl scale deployment.apps/mongo --replicas=1
-  #   become: false
