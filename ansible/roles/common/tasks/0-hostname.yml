@@ -4,11 +4,6 @@
       name: "{{ domain_name }}"
       use: systemd
 
-  #- name: Set private ip
-  #  set_fact:
-  #    private_ip: "{{ ansible_facts['default_ipv4']['address'] }}"
-  #  tags: common
-
   - name: Generate /etc/hosts file
     template:
       src: templates/hosts.j2

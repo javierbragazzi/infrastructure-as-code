@@ -16,3 +16,6 @@
   systemd:
     name: firewalld
     state: reloaded
+
+- name: Reboot node 
+  reboot:
