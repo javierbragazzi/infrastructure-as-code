@@ -15,8 +15,6 @@
       - mongodb-service
       - pacman-deployment
       - pacman-service
-      #- pacman-ingress
-      #- pacman-configmap
 
   - name: Change the IP of mongodb-pv
     shell: |
