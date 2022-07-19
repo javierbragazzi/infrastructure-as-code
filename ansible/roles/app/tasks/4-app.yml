@@ -1,20 +1,14 @@
 ---
   - name: Ceate the Pac-Man deployment.
-    shell: | 
-      kubectl create -f {{ temp_path }}/pacman-deployment.yaml
-    become: false
+    k8s:
+      state: present
+      src: "{{ temp_path }}/pacman-deployment.yaml"
+    become: true
+    become_user: "{{ ansible_user }}"
   
   - name: Creates the service to access the application
-    shell: | 
-      kubectl create -f {{ temp_path }}/pacman-service.yaml
-    become: false
-  
-  #- name: Creates the ingress
-  #  shell: | 
-  #    kubectl create -f {{ temp_path }}/pacman-ingress.yaml
-  #  become: false
-
-  #- name: Creates the configmap
-  #  shell: | 
-  #    kubectl create -f {{ temp_path }}/pacman-configmap.yaml
-  #  become: false
+    k8s:
+      state: present
+      src: "{{ temp_path }}/pacman-service.yaml"
+    become: true
+    become_user: "{{ ansible_user }}"

@@ -1,10 +1,14 @@
 ---
   - name: Create a mongo DNS entry
-    shell: | 
-      kubectl create -f {{ temp_path }}/mongodb-service.yaml
-    become: false
+    k8s:
+      state: present
+      src: "{{ temp_path }}/mongodb-service.yaml"
+    become: true
+    become_user: "{{ ansible_user }}"
 
   - name: Create the MongoDB deployment
-    shell: | 
-      kubectl create -f {{ temp_path }}/mongodb-deployment.yaml
-    become: false
+    k8s:
+      state: present
+      src: "{{ temp_path }}/mongodb-deployment.yaml"
+    become: true
+    become_user: "{{ ansible_user }}"

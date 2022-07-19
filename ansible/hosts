@@ -2,10 +2,10 @@
 ansible_user=adminUserVm
 
 [master]
-20.117.165.212 domain_name=master.jb.com private_ip=10.0.2.5 public_ip=20.117.165.212
+20.254.104.42 domain_name=master.jb.com private_ip=10.0.2.4 public_ip=20.254.104.42
 
 [workers]
-20.117.165.194 domain_name=worker.jb.com private_ip=10.0.2.6 public_ip=20.117.165.194
+20.254.104.45 domain_name=worker.jb.com private_ip=10.0.2.5 public_ip=20.254.104.45
 
 [nfs]
-20.117.164.215 domain_name=nfs.jb.com private_ip=10.0.2.4 public_ip=20.117.164.215
+51.132.33.131 domain_name=nfs.jb.com private_ip=10.0.2.6 public_ip=51.132.33.131

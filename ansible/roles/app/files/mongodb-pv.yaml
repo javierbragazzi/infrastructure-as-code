@@ -16,4 +16,4 @@ spec:
     - nfsvers=4.1
   nfs:
     path: /mnt/shared
-    server: 10.0.2.4
+    server: 10.0.2.6

@@ -1,5 +1,7 @@
 ---
   - name: Create persistent volume claim for our MongoDB to persist the database
-    shell: | 
-      kubectl create -f {{ temp_path }}/mongodb-pvc.yaml
-    become: false
+    k8s:
+      state: present
+      src: "{{ temp_path }}/mongodb-pvc.yaml"
+    become: true
+    become_user: "{{ ansible_user }}"
