@@ -1,7 +1,7 @@
 ---
- # - import_tasks: 0-setup.yml
- # - import_tasks: 1-pv.yml
- # - import_tasks: 2-pvc.yml
- # - import_tasks: 3-mongodb.yml
- # - import_tasks: 4-app.yml
+  - import_tasks: 0-setup.yml
+  - import_tasks: 1-pv.yml
+  - import_tasks: 2-pvc.yml
+  - import_tasks: 3-mongodb.yml
+  - import_tasks: 4-app.yml
   - import_tasks: 5-end.yml
