@@ -23,26 +23,40 @@ Is a sample Kubernetes application hosting an HTML5 Pac-Man game with Node.js as
 ## Deployment
 
 1. Install the Azure CLI on the local machine:
-https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
+
+-  https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 
 2. Sign in to our Azure account:
-  `a-z login`
+
+```console
+user@machine:~$ a-z login
+```
 3. Install Terraform:
-https://learn.hashicorp.com/tutorials/terraform/install-cli
+
+  - https://learn.hashicorp.com/tutorials/terraform/install-cli
 
 4. Create the infrastructure in Azure with Terraform by running the following script:
-`sh create-infra.sh`
+
+```console
+user@machine:~$ sh create-infra.sh
+```
 
 5. Update the hosts file that is inside the Ansible folder with the public and private IP's
 
 6. Update the mongodb-pv.yml file with the private IP of the nfs node:
 
 7. Configure the infrastructure and deploy the application with Ansible by running the following script:
-`sh deploy.sh`
+
+```console
+user@machine:~$ sh deploy.sh
+```
 
 8. Once the application pods are running, we open the browser and try to access it through the url `http://<EXTERNAL_IP>:<PORT>/`
 
 ## Destroy
 
-Run the following script to destroy Azure infraestructure.
-`sh destroy-infra.sh`
+Run the following script to destroy Azure infraestructure:
+
+```console
+user@machine:~$ sh destroy-infra.sh
+```
