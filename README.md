@@ -45,7 +45,7 @@ user@machine:~$ sh create-infra.sh
 
 5. Update the [hosts](https://github.com/javierbragazzi/infrastructure-as-code/blob/6a67e009c96e337ab90b4799994b682c85543b38/ansible/hosts) file that is inside the Ansible folder with the public and private IP's
 
-6. Update the [mongodb-pv.yml](https://github.com/javierbragazzi/infrastructure-as-code/blob/6a67e009c96e337ab90b4799994b682c85543b38/ansible/roles/app/files/mongodb-pv.yaml) file with the private IP of the nfs node:
+6. Update the [mongodb-pv.yml](https://github.com/javierbragazzi/infrastructure-as-code/blob/6a67e009c96e337ab90b4799994b682c85543b38/ansible/roles/app/files/mongodb-pv.yaml) file with the private IP of the nfs node
 
 7. Configure the infrastructure and deploy the application with Ansible by running the following [script](https://github.com/javierbragazzi/infrastructure-as-code/blob/6a67e009c96e337ab90b4799994b682c85543b38/ansible/deploy.sh):
 
