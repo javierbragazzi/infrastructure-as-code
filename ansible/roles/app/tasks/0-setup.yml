@@ -22,7 +22,18 @@
     with_items: 
         - "{{ groups['nfs'] }}"
   
+  - name: Install pre-requisites for k8s module
+    pip:
+      name:
+        - pyyaml
+        - kubernetes 
+        - jsonpatch
+
   - name: Create the namespace 
-    shell: kubectl create namespace app-pacman
-    become: false
-    
+    k8s:
+      api_version: v1
+      name: app-pacman
+      kind: Namespace
+      state: present
+    become: true
+    become_user: "{{ ansible_user }}"

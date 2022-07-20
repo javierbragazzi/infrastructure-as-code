@@ -6,10 +6,13 @@ metadata:
     name: pacman
   namespace: app-pacman
 spec:
-  type: LoadBalancer
-  ports:
-    - port: 80
-      targetPort: 8080
-      protocol: TCP
+  type: NodePort
   selector:
     name: pacman
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+      nodePort: 32593
+      protocol: TCP
+

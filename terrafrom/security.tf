@@ -48,6 +48,18 @@ resource "azurerm_network_security_group" "workers" {
     destination_address_prefix = "*"
   }
 
+    security_rule {
+    name                       = "Port_32593"
+    priority                   = 1002
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "32593"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+
   tags = var.tags_all_resources
 }
 
