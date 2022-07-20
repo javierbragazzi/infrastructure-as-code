@@ -51,7 +51,9 @@ user@machine:~$ sh create-infra.sh
 user@machine:~$ sh deploy.sh
 ```
 
-8. Once the application pods are running, we open the browser and try to access it through the url `http://<EXTERNAL_IP>:<PORT>/`
+8. Once the application pods are running, we open the browser and try to access it through the url 
+
+  `http://<EXTERNAL_IP>:<PORT>/`
 
 ## Destroy
 
