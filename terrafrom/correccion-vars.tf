@@ -4,6 +4,12 @@ variable "location" {
   default     = "uksouth"
 }
 
+variable "storage_account" {
+  type = string
+  description = "Nombre para la storage account"
+  default = "sAccount"
+}
+
 variable "public_key_path" {
   type        = string
   description = "Ruta para la clave pública de acceso a las instancias"
